@@ -96,6 +96,12 @@
     border-radius: 50%;
     border: 1px solid #cdcbd0;
 
+    .mask.full,
+    .circle .fill {
+      animation: fill ease-in-out 3s;
+      transform: rotate(135deg);
+    }
+
     .circle {
       .mask,
       .fill {
@@ -106,10 +112,10 @@
       }
 
       .mask {
-        clip: rect(0rem, 6rem, 6rem, 3rem);
+        clip: rect(0, 6rem, 6rem, 3rem);
 
         .fill {
-          clip: rect(0rem, 3rem, 6rem, 0rem);
+          clip: rect(0, 3rem, 6rem, 0);
           background-color: #227ded;
         }
       }
@@ -129,12 +135,6 @@
         font-weight: 700;
         font-size: 1.3em;
       }
-    }
-
-    .mask.full,
-    .circle .fill {
-      animation: fill ease-in-out 3s;
-      transform: rotate(135deg);
     }
   }
 
@@ -184,6 +184,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(135deg);
   }
