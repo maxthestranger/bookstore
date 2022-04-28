@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font: 'Montserrat', sans-serif;
+$pale: #f5f6fa;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background: $pale;
+}
+
+.container {
+  max-width: 1120px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+.mt-5 {
+  margin-top: 2.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 2.5rem;
+}
+
+hr {
+  height: 0.125rem;
+  border: 1px solid #e8e8e8;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: $font;
+  letter-spacing: -0.18px;
+  color: #888888;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}

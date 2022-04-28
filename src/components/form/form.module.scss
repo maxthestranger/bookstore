@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+
+  .input {
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    padding: 1rem 0.8rem;
+
+    &::placeholder {
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: -0.15px;
+      color: #c4c4c4;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:first-child {
+      width: 50%;
+    }
+
+    &:nth-child(2) {
+      width: 27%;
+    }
+  }
+
+  @media (max-width: 920px) {
+    flex-direction: column;
+    gap: 0.8rem;
+
+    .input {
+      width: 100% !important;
+
+      &:nth-child(2) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

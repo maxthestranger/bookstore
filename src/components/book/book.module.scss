@@ -1,0 +1,190 @@
+.book {
+  padding: 2rem 1.688rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 920px) {
+    flex-direction: column;
+    gap: 35px;
+
+    & > div {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  .category {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #121212;
+    margin-bottom: 0.8rem;
+    opacity: 0.5;
+    text-transform: capitalize;
+  }
+
+  .title {
+    font-size: 1.375rem;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: -0.2px;
+    color: #121212;
+    margin-bottom: 0.35rem;
+    text-transform: capitalize;
+  }
+
+  .author {
+    font-family: 'Roboto Slab', serif;
+    color: #4386bf;
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-family: 'Roboto Slab', serif;
+    color: #4386bf;
+    position: relative;
+
+    span {
+      margin: 0 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding: 0.2rem 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: 0.125rem;
+        height: 100%;
+        top: 0;
+        margin-left: 0.8rem;
+        background: #e8e8e8;
+      }
+
+      &:hover {
+        color: #0290ff;
+      }
+    }
+  }
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .circle_wrap {
+    width: 6rem;
+    height: 6rem;
+    background: #fefcff;
+    border-radius: 50%;
+    border: 1px solid #cdcbd0;
+
+    .circle {
+      .mask,
+      .fill {
+        width: 6rem;
+        height: 6rem;
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .mask {
+        clip: rect(0rem, 6rem, 6rem, 3rem);
+
+        .fill {
+          clip: rect(0rem, 3rem, 6rem, 0rem);
+          background-color: #227ded;
+        }
+      }
+
+      .inside_circle {
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        background: #d2eaf1;
+        line-height: 79px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: #1e51dc;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 1.3em;
+      }
+    }
+
+    .mask.full,
+    .circle .fill {
+      animation: fill ease-in-out 3s;
+      transform: rotate(135deg);
+    }
+  }
+
+  .numbers {
+    margin-top: 1rem;
+    color: #121212;
+    font-size: 0.875rem;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.5;
+    text-transform: capitalize;
+  }
+}
+
+.book_info {
+  color: #121212;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+
+  .chapter {
+    opacity: 0.5;
+    font-size: 0.813rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .chap_no {
+    font-size: 1rem;
+    letter-spacing: -0.4px;
+    margin-bottom: 1.8rem;
+    text-transform: capitalize;
+  }
+
+  .btn {
+    padding: 0.6rem 1.8rem;
+    border-radius: 3px;
+    background: #0290ff;
+    font-size: 0.813rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    border: none;
+  }
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}

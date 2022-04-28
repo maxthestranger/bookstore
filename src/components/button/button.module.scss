@@ -1,0 +1,19 @@
+.btn {
+  padding: 0.88rem 3rem;
+  color: #fff;
+  background: #0290ff;
+  border-radius: 3px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: lighten(#0290ff, 10%);
+  }
+}
