@@ -7,6 +7,7 @@ $trans: all 0.2s ease-in;
 a {
   text-decoration: none;
   transition: $trans;
+
   &:hover {
     color: $primary !important;
   }
@@ -25,7 +26,7 @@ a {
 
 .logo {
   max-width: 15rem;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.875rem;
   font-weight: bold;
   color: $primary;
@@ -63,6 +64,7 @@ a {
   align-items: center;
   cursor: pointer;
   transition: $trans;
+
   &:hover {
     background: darken($white, 5%);
   }
