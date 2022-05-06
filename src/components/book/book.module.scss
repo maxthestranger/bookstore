@@ -58,6 +58,14 @@
     color: #4386bf;
     position: relative;
 
+    .remove {
+      background: transparent;
+      color: #4386bf;
+      outline: none;
+      border: none;
+      font-family: 'Roboto Slab', serif;
+    }
+
     span,
     .remove {
       margin: 0 0.8rem;
@@ -190,12 +198,4 @@
   100% {
     transform: rotate(135deg);
   }
-}
-
-.remove {
-  background: transparent;
-  color: #4386bf;
-  outline: none;
-  border: none;
-  font-family: 'Roboto Slab', serif;
 }
