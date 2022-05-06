@@ -2,11 +2,26 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
+const books = [
+  {
+    id: 1,
+    category: 'Action',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+  {
+    id: 2,
+    category: 'Non-Fiction',
+    title: 'The Atomic Habit',
+    author: 'James Clear',
+  },
+];
+
 // Reducer
-export default function reducer(state = [], action = {}) {
+export default function reducer(state = books, action) {
   switch (action.type) {
     // do reducer stuff
-    case 'ADD_BOOK':
+    case ADD_BOOK:
       return [
         ...state,
         {
@@ -16,7 +31,7 @@ export default function reducer(state = [], action = {}) {
           author: action.author,
         },
       ];
-    case 'REMOVE_BOOK':
+    case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     default:
       return state;
