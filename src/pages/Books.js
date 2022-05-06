@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, removeBook } from '../redux/books/books';
 import Book from '../components/book/book';
 import Form from '../components/form/form';
 import Header from '../components/header/header';
@@ -47,6 +47,7 @@ const Books = () => {
             auth={author}
             prog="60%"
             chap="chapter 17"
+            onRemove={() => dispatch(removeBook({ id }))}
           />
         ))}
 

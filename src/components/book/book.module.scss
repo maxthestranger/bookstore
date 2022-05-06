@@ -58,7 +58,16 @@
     color: #4386bf;
     position: relative;
 
-    span {
+    .remove {
+      background: transparent;
+      color: #4386bf;
+      outline: none;
+      border: none;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    span,
+    .remove {
       margin: 0 0.8rem;
       cursor: pointer;
       transition: all 0.2s ease-in-out;

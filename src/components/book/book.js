@@ -2,7 +2,8 @@ import { PropTypes } from 'prop-types';
 import styles from './book.module.scss';
 
 const Book = ({
-  cat, tit, auth, prog, chap,
+  // eslint-disable-next-line react/prop-types
+  cat, tit, auth, prog, chap, onRemove,
 }) => (
   <div className={styles.book}>
     <div className={styles.info}>
@@ -11,7 +12,9 @@ const Book = ({
       <p className={styles.author}>{auth}</p>
       <div className={styles.links}>
         <span>Comments</span>
-        <span>Remove</span>
+        <button className={styles.remove} type="button" onClick={onRemove}>
+          Remove
+        </button>
         <span>Edit</span>
       </div>
     </div>

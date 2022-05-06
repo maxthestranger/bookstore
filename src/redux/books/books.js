@@ -51,6 +51,6 @@ export function addBook({
   };
 }
 
-export function removeBook(id) {
+export function removeBook({ id }) {
   return { type: REMOVE_BOOK, id };
 }
