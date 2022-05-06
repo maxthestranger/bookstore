@@ -10,7 +10,7 @@ const Categories = () => {
       <Header />
       <div className="container mt-5">
         <Button type="button" title="Check status" checkStatus={checkStatus} />
-        <p>{status}</p>
+        <p style={{ margin: '20px auto', fontWeight: 'bold' }}>{status}</p>
       </div>
     </>
   );
