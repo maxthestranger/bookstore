@@ -1,7 +1,7 @@
+import { PropTypes } from 'prop-types';
 import Button from '../button/button';
 import styles from './form.module.scss';
 
-// eslint-disable-next-line react/prop-types
 const Form = ({ handleSubmit }) => (
   <form className={styles.form} onSubmit={handleSubmit}>
     <input
@@ -29,5 +29,13 @@ const Form = ({ handleSubmit }) => (
     <div className="mt-5" />
   </form>
 );
+
+Form.propTypes = {
+  handleSubmit: PropTypes.func,
+};
+
+Form.defaultProps = {
+  handleSubmit: () => null,
+};
 
 export default Form;
