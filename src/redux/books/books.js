@@ -57,7 +57,7 @@ export function addBook({
   };
 }
 
-export function removeBook(id) {
+export function removeBook({ id }) {
   return async (dispatch) => {
     const result = await BookstoreAPI.removeBook({ id });
     if (result) {
