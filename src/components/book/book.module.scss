@@ -1,5 +1,6 @@
 .book {
   padding: 2rem 1.688rem;
+  margin: 20px 0;
   width: 100%;
   border-radius: 4px;
   border: 1px solid #e8e8e8;
@@ -57,7 +58,16 @@
     color: #4386bf;
     position: relative;
 
-    span {
+    .remove {
+      background: transparent;
+      color: #4386bf;
+      outline: none;
+      border: none;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    span,
+    .remove {
       margin: 0 0.8rem;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
@@ -105,8 +115,8 @@
     .circle {
       .mask,
       .fill {
-        width: 6rem;
-        height: 6rem;
+        // width: 6rem;
+        // height: 6rem;
         position: absolute;
         border-radius: 50%;
       }
@@ -115,7 +125,7 @@
         clip: rect(0, 6rem, 6rem, 3rem);
 
         .fill {
-          clip: rect(0, 3rem, 6rem, 0);
+          // clip: rect(0, 3rem, 6rem, 0);
           background-color: #227ded;
         }
       }
@@ -127,8 +137,8 @@
         background: #d2eaf1;
         line-height: 79px;
         text-align: center;
-        margin-top: 10px;
-        margin-left: 10px;
+        margin-top: 8px;
+        margin-left: 8px;
         color: #1e51dc;
         position: absolute;
         z-index: 100;
