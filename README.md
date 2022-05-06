@@ -16,27 +16,13 @@
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-- node and npm
-
-### Setup
-
-- git clone repo
-
-### Install
-
-- npm install
-
-### Usage
-
-- localhost:3000
-
-### Run tests
-
-npm run test
-
-### Deployment
+- copy this link `https://github.com/maxthestranger/bookstore.git`.
+- get the directory that you want to clone the repository.
+- open the command prompt in this directory.
+- write `git clone https://github.com/maxthestranger/bookstore.git`.
+- go to the repository folder in your command prompt.
+- run `npm install`
+- to open the project run `npm start`
 
 ## Authors
 
