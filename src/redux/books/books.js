@@ -1,26 +1,22 @@
+import BookstoreAPI from '../../api/bookstoreAPI';
 // Actions
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
+const DATA_FETCHED = 'DATA_FETCHED';
 
-const books = [
-  {
-    id: 1,
-    category: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-  },
-  {
-    id: 2,
-    category: 'Non-Fiction',
-    title: 'The Atomic Habit',
-    author: 'James Clear',
-  },
-];
+export const fetchBooks = () => async (dispatch) => {
+  const books = await BookstoreAPI.getAllBooks();
+  if (books) {
+    dispatch({ type: DATA_FETCHED, books });
+  }
+};
 
 // Reducer
-export default function reducer(state = books, action) {
+export default function reducer(state = [], action) {
   switch (action.type) {
     // do reducer stuff
+    case DATA_FETCHED:
+      return action.books;
     case ADD_BOOK:
       return [
         ...state,
@@ -42,15 +38,33 @@ export default function reducer(state = books, action) {
 export function addBook({
   id, category, title, author,
 }) {
-  return {
-    type: ADD_BOOK,
-    id,
-    category,
-    title,
-    author,
+  return async (dispatch) => {
+    const result = await BookstoreAPI.addBook({
+      id,
+      title,
+      author,
+      category,
+    });
+    if (result) {
+      dispatch({
+        type: ADD_BOOK,
+        id,
+        category,
+        title,
+        author,
+      });
+    }
   };
 }
 
 export function removeBook(id) {
-  return { type: REMOVE_BOOK, id };
+  return async (dispatch) => {
+    const result = await BookstoreAPI.removeBook({ id });
+    if (result) {
+      dispatch({
+        type: REMOVE_BOOK,
+        id,
+      });
+    }
+  };
 }

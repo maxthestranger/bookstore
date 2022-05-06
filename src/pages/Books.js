@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, removeBook, fetchBooks } from '../redux/books/books';
 import Book from '../components/book/book';
 import Form from '../components/form/form';
 import Header from '../components/header/header';
@@ -7,6 +8,10 @@ import Header from '../components/header/header';
 const Books = () => {
   const dispatch = useDispatch();
   const booksList = useSelector((state) => state.books);
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,8 +50,9 @@ const Books = () => {
             cat={category}
             tit={title}
             auth={author}
-            prog="60%"
-            chap="chapter 17"
+            prog="0%"
+            chap="chapter 1"
+            onRemove={() => dispatch(removeBook({ id }))}
           />
         ))}
 
